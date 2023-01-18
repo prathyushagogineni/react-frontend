@@ -2,7 +2,7 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: "{{s3_bucket_url}}"
-    BUILD_FOLDER: "dist"
+    BUILD_FOLDER: "build"
 phases:
   install:
     runtime-versions:
@@ -10,13 +10,12 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
-      - npm install -g @angular/cli
   build:
     commands:
       - echo Build started
-      - ng build
+      - npm run build
 artifacts:
   files:
     - "**/*"
-  base-directory: "dist*"
-  discard-paths: yes
+  base-directory: "build*"
+  discard-paths: no
