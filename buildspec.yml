@@ -2,7 +2,7 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: "{{s3_bucket_url}}"
-    BUILD_FOLDER: "build"
+    BUILD_FOLDER: "dist"
 phases:
   install:
     runtime-versions:
@@ -17,5 +17,5 @@ phases:
 artifacts:
   files:
     - "**/*"
-  base-directory: "build*"
+  base-directory: "dist*"
   discard-paths: yes
